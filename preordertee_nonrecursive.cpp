@@ -49,7 +49,7 @@ node* newnode(int data)
   temp->left=NULL;
   return temp;
 }
-void preorder(node *root)
+void inorder(node *root)
 {
   node *ptr=root;
   if(ptr==NULL)
@@ -57,16 +57,24 @@ void preorder(node *root)
     cout<<"tree is empty"<<endl;
     return;
   }
-  push(ptr);
-  while(!isempty())
-  {
-    ptr=pop();
-    cout<<ptr->data<<endl;
-    if(ptr->right!=NULL)
-    push(ptr->right);
-    if(ptr->left!=NULL)
-    push(ptr->left);
-  }
+ while(1)
+ {
+   while(ptr->left!=NULL)
+   {
+     push(ptr);
+     ptr=ptr->left;
+   }
+   while(ptr->right==NULL)
+   {
+     cout<<ptr->data<<" ";
+     if(isempty())
+     return;
+     ptr=pop();
+   }
+   cout<<ptr->data<<" ";
+   ptr=ptr->right;
+
+ }
 }
 int main()
 {
@@ -76,5 +84,5 @@ int main()
   root->left->right=newnode(14);
   root->right=newnode(15);
   root->right->left=newnode(16);
-  preorder(root);
+  inorder(root);
 }
