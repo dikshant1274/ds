@@ -122,5 +122,8 @@ int main()
   d.insertatend(40);
   d.deleteatfront();
   d.deleteatend();
+  d.insertatfront(10);
+  d.insertatfront(20);
+  d.insertatfront(30);
   d.display();
 }

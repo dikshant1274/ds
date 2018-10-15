@@ -20,7 +20,7 @@ public:
     {
       front++;
       rear++;
-      arr[front]=x;
+      arr[rear]=x;
     }
     else
     {
@@ -30,7 +30,7 @@ public:
   }
   void del()
   {
-    if(front==rear+1&&front==-1)
+    if(front==rear+1||front==-1)
     {
       cout<<"queue underflow"<<endl;
     }
