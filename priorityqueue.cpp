@@ -8,7 +8,7 @@ struct node
 };
 class  pqueue
 {
-  node *front,*rear;
+  node *front;
 public:
   pqueue()
   {

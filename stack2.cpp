@@ -117,7 +117,7 @@ int main()
       }
       else
       {
-        while(!isempty(root) && prec(s[i])<=prec(top(&root)))
+        while((!isempty(root)) && prec(s[i])<=prec(top(&root)))
         {
           c=pop(&root);
           os=os+c;
